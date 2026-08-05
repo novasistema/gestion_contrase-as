@@ -1,0 +1,6 @@
+{
+  "name": "Gestor de Contraseñas y Datos Seguros",
+  "description": "Bóveda de contraseñas y datos con cifrado de extremo a extremo, sincronización en la nube con email y acceso seguro multidispositivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

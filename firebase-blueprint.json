@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Vault",
+      "description": "User profile and encrypted vault data accessible across devices",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "User Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "accountName": {
+          "type": "string",
+          "description": "Account display name"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last sync timestamp"
+        },
+        "salt": {
+          "type": "string",
+          "description": "Master password salt"
+        },
+        "verifier": {
+          "type": "object",
+          "description": "Key verifier payload"
+        },
+        "itemsEncrypted": {
+          "type": "object",
+          "description": "Encrypted vault items array"
+        },
+        "settingsEncrypted": {
+          "type": "object",
+          "description": "Encrypted settings"
+        }
+      },
+      "required": ["uid", "email"]
+    }
+  }
+}
