@@ -118,6 +118,8 @@ export const LockScreen: React.FC<LockScreenProps> = ({
       console.error('Registration error:', err);
       if (err.code === 'auth/email-already-in-use') {
         setErrorMsg('Este correo ya está registrado. Por favor inicie sesión.');
+      } else if (err.code === 'auth/operation-not-allowed') {
+        setErrorMsg('El registro con Email/Contraseña debe ser activado en Firebase Console > Authentication > Sign-in method > Correo electrónico / Contraseña.');
       } else {
         setErrorMsg(err.message || 'Error al registrar la cuenta en la nube.');
       }
@@ -150,6 +152,8 @@ export const LockScreen: React.FC<LockScreenProps> = ({
       console.error('Login error:', err);
       if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
         setErrorMsg('Correo o contraseña incorrectos.');
+      } else if (err.code === 'auth/operation-not-allowed') {
+        setErrorMsg('El proveedor Correo/Contraseña está desactivado en Firebase Console > Authentication > Sign-in method.');
       } else {
         setErrorMsg(err.message || 'Error al iniciar sesión.');
       }
