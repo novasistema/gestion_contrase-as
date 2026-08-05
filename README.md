@@ -1,82 +1,84 @@
-# Bóveda Cifrada de Contraseñas y Secretos
+# ServiGo - Red de Servicios y Profesionales del Hogar 🛠️
 
-Una aplicación web moderna, privada e independiente para la gestión y almacenamiento seguro de contraseñas, notas secretas, tarjetas y documentos de identidad.
+ServiGo es una plataforma web y móvil para la búsqueda rápida, presupuesto y contratación de profesionales independientes (Gasistas Matriculados, Electricistas, Plomeros, Pintores, Cerrajeros, Técnicos en Aire Acondicionado, etc.).
 
-Diseñada bajo arquitectura **Zero-Knowledge** (Conocimiento Cero) y cifrado de extremo a extremo en el navegador.
-
----
-
-## 🔒 Características de Seguridad y Cifrado
-
-- **Cifrado Militar AES-256-GCM**: Todas las credenciales, notas y datos se cifran en el cliente utilizando la API oficial `Web Crypto` del navegador.
-- **Derivación PBKDF2**: Derivación de claves segura a partir de la Contraseña Maestra con 100.000 iteraciones y Salt aleatorio de 128 bits.
-- **Arquitectura Zero-Knowledge**: La Contraseña Maestra nunca se guarda en texto plano ni se envía a servidores. Si no la recuerdas, nadie puede descifrar tus datos.
-- **Auto-Bloqueo por Inactividad**: Temporizador configurable que bloquea la bóveda automáticamente si dejas el dispositivo desatendido.
-- **Limpieza Automática de Portapapeles**: Al copiar contraseñas o datos, el portapapeles se limpia automáticamente tras los segundos configurados.
-- **Protección contra Capturas / Visualización**: Ocultamiento de campos sensibles y generador de contraseñas criptográficamente seguras (`crypto.getRandomValues`).
-- **Simulación y Check de Autenticación Biométrica (WebAuthn)**.
-
----
-
-## 📱 Funcionalidades de la Aplicación
-
-- **Gestor Multitipo**:
-  - 🔑 **Contraseñas y Accesos** (con soporte para URLs, credenciales y notas adicionales).
-  - 📝 **Notas Secretas** (con formato enriquecido/bloques de código).
-  - 💳 **Tarjetas de Crédito / Débito** (con CVC/CVV cifrado).
-  - 🪪 **Documentos de Identidad y Pasaportes**.
-  - 🏦 **Cuentas Bancarias y Datos Financieros**.
-- **Auditoría de Seguridad**: Análisis en tiempo real de contraseñas débiles, reutilizadas, expuestas o sin actualización reciente.
-- **Generador Completo de Contraseñas**: Control de longitud, mayúsculas, minúsculas, números, símbolos e indicador de entropía/fortaleza.
-- **Filtros y Búsqueda Inmediata**: Búsqueda por categoría, tipo de elemento, favoritos o término clave.
-- **Importación y Exportación de Respaldos**:
-  - Exportación en formato cifrado `.vault` (protegido por clave maestra).
-  - Exportación en CSV.
-  - Importación y combinación rápida de datos.
-- **Diseño Ultra Adaptable**: Interfaz optimizada para móviles, tablets y escritorios con tema oscuro y acentos cian/azul.
-
----
-
-## 💾 ¿Dónde y cómo se guardan los datos?
-
-Los datos se almacenan exclusivamente en el **`localStorage` de tu propio navegador web**.
-- **Cifrado previo**: Antes de escribirse en el almacenamiento local, los datos son cifrados en memoria con la clave derivada de tu Contraseña Maestra.
-- **Privacidad Total**: Tus datos no se suben a GitHub ni a ningún servidor externo.
-- **Persistencia Local**: Aunque cierres la pestaña o apagues la computadora, los datos permanecerán en tu navegador hasta que decidas borrar la bóveda o limpiar los datos del sitio.
-
----
-
-## 🚀 Cómo ejecutar localmente
-
-### Prerrequisitos
-- Node.js (v18 o superior)
-- npm o yarn
-
-### Pasos
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/TU_USUARIO/NOMBRE_DEL_REPOSITORIO.git
-   ```
-2. Accede al directorio:
-   ```bash
-   cd NOMBRE_DEL_REPOSITORIO
-   ```
-3. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-4. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-5. Abre en tu navegador la dirección indicada (usualmente `http://localhost:3000`).
+La aplicación incluye:
+- ☁️ **Persistencia en la Nube con Google Firebase Firestore**: Todos los perfiles de trabajadores registrados, calificaciones/reseñas y solicitudes de servicio se guardan de forma persistente y sincronizan en tiempo real.
+- 🤖 **Diagnóstico Inteligente con Gemini AI**: Evaluación automatizada de fallas para guiar al usuario hacia el rubro correcto y recomendar materiales.
+- 🏪 **Auspicio Oficial de Ferretería Bruzzone**: Catálogo de insumos con descuentos en mano de obra.
+- 📲 **Coordinación Inmediata por WhatsApp**: Envío automático de solicitudes de turno.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **React 18** + **TypeScript**
-- **Vite** (Build Tool)
-- **Tailwind CSS** (Estilos y Diseño Responsivo)
-- **Lucide React** (Iconografía)
-- **Web Crypto API** (`SubtleCrypto` - AES-GCM, PBKDF2)
+- **React 19** + **TypeScript**
+- **Vite** + **Express**
+- **Tailwind CSS v4**
+- **Google Firebase Firestore**
+- **Lucide React Icons**
+
+---
+
+## 🚀 Pasos para Subir el Código a GitHub
+
+Para subir este proyecto a tu cuenta de GitHub desde tu terminal local:
+
+1. **Inicializa el repositorio Git** (si aún no lo está):
+   ```bash
+   git init
+   ```
+
+2. **Agrega todos los archivos al repositorio**:
+   ```bash
+   git add .
+   ```
+
+3. **Crea tu primer commit**:
+   ```bash
+   git commit -m "feat: proyecto ServiGo completo con Firebase Firestore y GitHub listo"
+   ```
+
+4. **Conecta tu repositorio de GitHub**:
+   Crea un nuevo repositorio en GitHub (por ejemplo `servigo-app`) y ejecuta:
+   ```bash
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/servigo-app.git
+   ```
+
+5. **Sube los cambios a GitHub**:
+   ```bash
+   git push -u origin main
+   ```
+
+---
+
+## 💻 Pasos para Ejecutar Localmente
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/TU_USUARIO/servigo-app.git
+   cd servigo-app
+   ```
+
+2. **Instalar las dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Ejecutar en modo desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Compilar para producción**:
+   ```bash
+   npm run build
+   npm start
+   ```
+
+---
+
+## ☁️ Configuración de Firebase Firestore en la Nube
+
+El proyecto ya cuenta con las credenciales de Firebase y las reglas de seguridad de Firestore configuradas en `firebase-applet-config.json` y `firestore.rules`. Los datos ingresados se guardan automáticamente en la nube.
